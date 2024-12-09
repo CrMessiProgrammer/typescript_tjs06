@@ -17,7 +17,7 @@ for (let numero of numeros) {
 }
 
 // 'push' adiciona elementos na Coleção, mas no final da fila
-//numeros.push(readlinesync.questionFloat("Digite um numero: "));
+numeros.push(readlinesync.questionFloat("Digite um numero: "));
 
 // 'unshift' adiciona elementos na Coleção, mas no começo da fila
 numeros.unshift(2, 4.5, 8, 9);
