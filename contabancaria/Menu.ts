@@ -1,5 +1,7 @@
 import readlinesync = require('readline-sync')
 import { Conta } from './model/Conta';
+import { ContaCorrente } from './model/ContaCorrente';
+import { ContaPoupanca } from './model/ContaPoupanca';
 
 // função main = principal (inicializar o programa sempre por aqui) 
 export function main() {
@@ -19,6 +21,31 @@ export function main() {
     // Depósito
     conta.depositar(1000.00);
     conta.visualizar();
+    
+    // Ao criar o objeto da classe ContaCorrente, é preciso preencher todos os atributos da classe Conta + o atributo da classe ContaCorrente
+    const contaCorrente: ContaCorrente = new ContaCorrente(2, 456, 1, "Maria Silva", 1000.00, 500.00);
+    contaCorrente.visualizar();
+    
+    // Saque da Conta Corrente 
+    contaCorrente.sacar(1000.00);
+    contaCorrente.visualizar();
+    
+    // Depósito da Conta Corrente
+    contaCorrente.depositar(2000.00);
+    contaCorrente.visualizar();
+    
+    const contaPoupanca: ContaPoupanca = new ContaPoupanca(3, 789, 2, "Mariana Souza", 1000.00, 10);
+    contaPoupanca.visualizar();
+    
+    // Saque da Conta Poupança 
+    contaPoupanca.sacar(100.00);
+    contaPoupanca.visualizar();
+
+    // Como os métodos 'sacar()' e 'depositar()' não foram sobrescritos, os objetos da classe ContaPoupanca utilizaram os respectivos métodos herdados da classe Conta
+    
+    // Depósito da Conta Poupança
+    contaPoupanca.depositar(1000.00);
+    contaPoupanca.visualizar();
 
 }
 
