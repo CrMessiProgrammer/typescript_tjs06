@@ -1,5 +1,6 @@
 // Declarando uma classe. O 'export' indica que esta Classe poderá ser instanciada por qualquer outra Classe dentro do projeto
-export class Conta {
+// 'abstract' torna a classe abstrata (oculta, não possibilitando instanciar)
+export abstract class Conta {
     // À partir de uma Classe podemos construir inúmeros Objetos
 
     // Um Objeto é uma entidade caracterizada por um conjunto de Métodos e Atributos, podendo ainda ser compostos por outros Objetos

@@ -1,5 +1,4 @@
 import readlinesync = require('readline-sync')
-import { Conta } from './model/Conta';
 import { ContaCorrente } from './model/ContaCorrente';
 import { ContaPoupanca } from './model/ContaPoupanca';
 
@@ -8,19 +7,24 @@ export function main() {
 
     let opcao: number;
 
-    // Crias novas Instâncias (Objetos) da Classe 'Conta'
-    const conta: Conta = new Conta(1, 123, 1, "João da Silva", 1000.00);
-    // Outra forma de Instanciar um Objeto:
-    // const conta = new Conta(1, 123, 1, "Carlos", 100000);
-    conta.visualizar();
-    
-    // Saque
-    conta.sacar(500.00);
-    conta.visualizar();
-    
-    // Depósito
-    conta.depositar(1000.00);
-    conta.visualizar();
+    /*  Uma Classe Abstrata não pode ser instanciada, por isso comentei esse Objeto da classe Conta
+        (se não daria erro no código)
+        // Crias novas Instâncias (Objetos) da Classe 'Conta'
+        const conta: Conta = new Conta(1, 123, 1, "João da Silva", 1000.00);
+        Outra forma de Instanciar um Objeto:
+        const conta = new Conta(1, 123, 1, "Carlos", 100000);
+        conta.visualizar();
+        
+        // Saque
+        conta.sacar(500.00);
+        conta.visualizar();
+        
+        // Depósito
+        conta.depositar(1000.00);
+        conta.visualizar();
+    */
+
+    // Como 'ContaCorrente' e 'ContaPoupanca' são heranças da classe 'Conta', podemos afirmar que os Objetos das classes 'ContaCorrente' e 'ContaPoupanca' são Tipos de 'Conta'.
     
     // Ao criar o objeto da classe ContaCorrente, é preciso preencher todos os atributos da classe Conta + o atributo da classe ContaCorrente
     const contaCorrente: ContaCorrente = new ContaCorrente(2, 456, 1, "Maria Silva", 1000.00, 500.00);
